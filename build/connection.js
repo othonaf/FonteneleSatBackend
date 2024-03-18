@@ -9,12 +9,13 @@ dotenv_1.default.config();
 const connection = (0, knex_1.default)({
     client: "postgres",
     connection: {
-        host: process.env.DB_HOST,
-        port: 5432,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_SCHEMA,
-        multipleStatements: true
+        connectionString: process.env.POSTGRES_URL,
+        // host: process.env.DB_HOST,
+        // port: 5432, 
+        // user: process.env.DB_USER,
+        // password: process.env.DB_PASSWORD,
+        // database: process.env.DB_SCHEMA,
+        // multipleStatements: true
     },
 });
 exports.default = connection;
